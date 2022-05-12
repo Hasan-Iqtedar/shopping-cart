@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders heading and image 1`] = `
+<div>
+  <div
+    id="home"
+  >
+    <h1>
+      Welcome to the 
+      <br />
+       Store
+    </h1>
+    <img
+      alt="shop img"
+      src="home.png"
+    />
+  </div>
+</div>
+`;
