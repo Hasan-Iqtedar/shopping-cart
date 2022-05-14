@@ -7,7 +7,7 @@ import NavigationBar from "./components/NavigationBar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <BrowserRouter>
       <NavigationBar />
       <Routes>
@@ -15,5 +15,5 @@ root.render(
         <Route path="/products" element={<Products />}></Route>
       </Routes>
     </BrowserRouter>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
