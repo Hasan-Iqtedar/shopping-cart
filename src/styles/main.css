@@ -65,6 +65,7 @@ body {
 
 .products-container {
     width: 80%;
+    /* border: 1px solid red; */
     height: 100%;
     display: grid;
     margin: auto;
@@ -122,4 +123,27 @@ body {
     margin-top: 20px;
     border: none;
     border-radius: 7px;
+}
+
+#cart {
+    width: 0;
+    height: 100%;
+    position: fixed;
+    right: 0;
+    top: 0;
+    /* z-index: 1; */
+    overflow: hidden;
+    height: 100%;
+    background-color: ghostwhite;
+    transition: 0.7s;
+}
+
+#cart-background {
+    width: 0;
+    height: 100%; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: 0.5s;
 }

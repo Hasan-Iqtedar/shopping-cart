@@ -9,7 +9,7 @@ const Home = (props) => {
         Welcome to the <br></br> Store
       </h1>
       <img src={homeImage} alt="shop img" />
-      <div className="cart"></div>
+      {/* <div className="cart"></div> */}
     </div>
   );
 };
