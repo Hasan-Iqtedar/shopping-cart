@@ -3,6 +3,7 @@ import Products from "../components/Products";
 
 const products = [
   {
+    id: 0,
     image: "https://abc.png",
     price: 123,
     title: "abc",
