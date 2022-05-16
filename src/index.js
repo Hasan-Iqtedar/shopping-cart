@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { GlobalProvider } from "./context/GlobalState";
 import App from "./App";
 import Products from "./components/Products";
 import NavigationBar from "./components/NavigationBar";
@@ -9,13 +10,30 @@ import Cart from "./components/Cart";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   // <React.StrictMode>
-    <BrowserRouter>
-      <NavigationBar />
-      <Cart />
+  <BrowserRouter>
+    <NavigationBar />
+    <GlobalProvider>
       <Routes>
-        <Route path="/" element={<App />}></Route>
-        <Route path="/products" element={<Products />}></Route>
+        <Route
+          path="/"
+          element={
+            <>
+              <Cart />
+              <App />
+            </>
+          }
+        ></Route>
+        <Route
+          path="/products"
+          element={
+            <>
+              <Cart />
+              <Products />
+            </>
+          }
+        ></Route>
       </Routes>
-    </BrowserRouter>
+    </GlobalProvider>
+  </BrowserRouter>
   // </React.StrictMode>
 );

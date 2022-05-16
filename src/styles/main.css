@@ -136,6 +136,19 @@ body {
     height: 100%;
     background-color: ghostwhite;
     transition: 0.7s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.cart-item {
+    width: 80%;
+    padding: 5px;
+    /* border: 1px solid gray; */
+    margin-top: 5px;
+    border-radius: 7px;
+    box-shadow: 2px 2px 2px gray;
 }
 
 #cart-background {
