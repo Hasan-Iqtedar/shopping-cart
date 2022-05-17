@@ -37,7 +37,7 @@ const Cart = (props) => {
   return (
     <div className="cart-container">
       <div id="cart">
-        <h2>Cart</h2>
+        <h2 className="title">Cart</h2>
         <div className="cart-items-container">
           {productsInCart.map((product) => {
             return (
@@ -50,7 +50,7 @@ const Cart = (props) => {
             );
           })}
         </div>
-        <h2>Total: {total}</h2>
+        <h2 className="total">Total: ${total}</h2>
       </div>
       <div id="cart-background"></div>
     </div>
