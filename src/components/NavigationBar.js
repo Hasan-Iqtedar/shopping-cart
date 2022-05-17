@@ -5,7 +5,7 @@ import NavigationItem from "./NavigationItem";
 import "./../styles/main.css";
 
 const NavigationBar = (props) => {
-  const toggleCart = (e) => {
+  const openCart = (e) => {
     e.stopPropagation();
     const cartBackground = document.getElementById("cart-background");
     const cart = document.getElementById("cart");
@@ -19,7 +19,7 @@ const NavigationBar = (props) => {
       <NavigationItemsContainer>
         <NavigationItem path="/" title="Home" />
         <NavigationItem path="/products" title="Products" />
-        <IoCartOutline onClick={toggleCart} className="cart-icon" />
+        <IoCartOutline onClick={openCart} className="cart-icon" />
       </NavigationItemsContainer>
     </div>
   );
