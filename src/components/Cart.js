@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { GlobalContext } from "../context/GlobalState";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {

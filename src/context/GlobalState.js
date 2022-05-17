@@ -3,6 +3,7 @@ import productsReducer from "./productsReducer";
 
 const initialState = {
   products: [],
+  productsInCart: [],
 };
 
 export const GlobalContext = createContext(initialState);
@@ -18,7 +19,7 @@ export const GlobalProvider = (props) => {
   };
 
   //Actions to be dispatched.
-  const addItems = (item) => {
+  const addItem = (item) => {
     dispatch({
       type: "ADD_ITEM",
       product: item,
@@ -34,7 +35,7 @@ export const GlobalProvider = (props) => {
 
   return (
     <GlobalContext.Provider
-      value={{ products: state.products, initializeState, addItems, removeItem }}
+      value={{ products: state.products, initializeState, addItem, removeItem }}
     >
       {props.children}
     </GlobalContext.Provider>
