@@ -9,8 +9,14 @@ const NavigationBar = (props) => {
     e.stopPropagation();
     const cartBackground = document.getElementById("cart-background");
     const cart = document.getElementById("cart");
-    cartBackground.style.width = "70%";
-    cart.style.width = "30%";
+
+    if (window.innerWidth >= 700) {
+      cartBackground.style.width = "70%";
+      cart.style.width = "30%";
+    } else {
+      cartBackground.style.width = "30%";
+      cart.style.width = "70%";
+    }
   };
 
   return (
