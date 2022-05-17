@@ -35,7 +35,13 @@ export const GlobalProvider = (props) => {
 
   return (
     <GlobalContext.Provider
-      value={{ products: state.products, initializeState, addItem, removeItem }}
+      value={{
+        products: state.products,
+        productsInCart: state.productsInCart,
+        initializeState,
+        addItem,
+        removeItem,
+      }}
     >
       {props.children}
     </GlobalContext.Provider>

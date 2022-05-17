@@ -3,7 +3,8 @@ import { GlobalContext } from "../context/GlobalState";
 import CartItem from "./CartItem";
 
 const Cart = (props) => {
-  const [products, setProducts] = useState([{title: 'shirt'}]);
+  const { productsInCart } = useContext(GlobalContext);
+  const [total, setTotal] = useState(0);
 
   useEffect(() => {
     const cartBackground = document.getElementById("cart-background");
@@ -19,13 +20,37 @@ const Cart = (props) => {
     return () => cartBackground.removeEventListener("click", closeCart);
   }, []);
 
+  useEffect(() => {
+    const calculateTotal = () => {
+      const totalPrice = productsInCart.reduce(
+        (previousValue, currentValue) => {
+          return previousValue + currentValue.price * currentValue.quantity;
+        },
+        0
+      );
+
+      setTotal(Math.round(totalPrice));
+    };
+    calculateTotal();
+  }, [productsInCart]);
+
   return (
     <div className="cart-container">
       <div id="cart">
-        Cart
-        {products.map((product) => {
-          return <CartItem title={product.title} />;
-        })}
+        <h2>Cart</h2>
+        <div className="cart-items-container">
+          {productsInCart.map((product) => {
+            return (
+              <CartItem
+                title={product.title}
+                price={product.price}
+                quantity={product.quantity}
+                key={product.id}
+              />
+            );
+          })}
+        </div>
+        <h2>Total: {total}</h2>
       </div>
       <div id="cart-background"></div>
     </div>

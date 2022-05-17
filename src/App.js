@@ -17,7 +17,6 @@ function App() {
         const items = json.filter((element) =>
           element.category.includes("clothing")
         );
-        console.log(items);
         initializeState(items);
         setLoading(false);
       });
