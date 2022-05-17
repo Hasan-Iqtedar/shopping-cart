@@ -3,29 +3,15 @@ import { GlobalContext } from "../context/GlobalState";
 import ProductCard from "./ProductCard";
 
 const Products = (props) => {
-  const { initializeState, addItems, products } = useContext(GlobalContext);
-  const [loading, setLoading] = useState(true);
+  const { addItems, products } = useContext(GlobalContext);
   const [data, setData] = useState([]);
-
-  useEffect(() => {
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((json) => {
-        const items = json.filter((element) =>
-          element.category.includes("clothing")
-        );
-        console.log(items);
-        initializeState(items);
-        setLoading(false);
-      });
-  }, []);
 
   useEffect(() => {
     setData(products);
     console.log("update...");
   }, [products]);
 
-  if (loading) {
+  if (props.isLoading) {
     return <div>Loading....</div>;
   } else {
     return (

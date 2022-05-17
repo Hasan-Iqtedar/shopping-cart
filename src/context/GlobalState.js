@@ -19,8 +19,6 @@ export const GlobalProvider = (props) => {
 
   //Actions to be dispatched.
   const addItems = (item) => {
-    console.log("addItem____________");
-    // console.log(item);
     dispatch({
       type: "ADD_ITEM",
       product: item,

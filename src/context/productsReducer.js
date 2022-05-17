@@ -8,9 +8,7 @@ const productsReducer = (state, action) => {
 
     case "ADD_ITEM": {
       console.log("Reducer ADD_ITEM__________");
-      // console.log(action.products);
       const updatedProducts = [...state.products, action.product];
-      // console.log(updatedProducts);
       return {
         products: updatedProducts,
       };
