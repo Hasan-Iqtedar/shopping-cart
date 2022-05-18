@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { GlobalContext } from "./context/GlobalState";
 import Products from "./components/Products";
 import NavigationBar from "./components/NavigationBar";
@@ -23,7 +23,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="/">
+    <HashRouter>
       <NavigationBar />
       <Cart />
       <Routes>
@@ -33,7 +33,7 @@ function App() {
           element={<Products isLoading={loading} />}
         ></Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
