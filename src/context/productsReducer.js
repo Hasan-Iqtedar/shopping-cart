@@ -31,9 +31,18 @@ const productsReducer = (state, action) => {
     }
 
     case "REMOVE_ITEM": {
-      const updatedProducts = state.productsInCart.filter(
-        (element) => element.id !== action.id
-      );
+      const updatedProducts = state.productsInCart.filter((element) => {
+        if (element.id === action.id) {
+          if (element.quantity > 1) {
+            element.quantity--;
+            return true;
+          } else {
+            return false;
+          }
+        }
+        return true;
+      });
+
       return {
         ...state,
         productsInCart: updatedProducts,

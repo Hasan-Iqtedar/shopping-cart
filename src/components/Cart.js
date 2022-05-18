@@ -40,14 +40,7 @@ const Cart = (props) => {
         <h2 className="title">Cart</h2>
         <div className="cart-items-container">
           {productsInCart.map((product) => {
-            return (
-              <CartItem
-                title={product.title}
-                price={product.price}
-                quantity={product.quantity}
-                key={product.id}
-              />
-            );
+            return <CartItem product={product} key={product.id} />;
           })}
         </div>
         <h2 className="total">Total: ${total}</h2>

@@ -5,9 +5,7 @@ const ProductCard = (props) => {
   const { addItem } = useContext(GlobalContext);
   const { product } = props;
 
-  const addToCart = () => {
-    addItem(product);
-  };
+  const addToCart = () => addItem(product);
 
   return (
     <div className="product">
